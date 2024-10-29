@@ -7,6 +7,7 @@ import DialogComp from './components/DialogComp';
 import { useDispatch } from "react-redux";
 import { dispatchUserData } from './redux/user/userSlice';
 import { dispatchIsLoading } from './redux/loading/loadingSlice';
+import MapComp from './components/MapComp';
 
 function App() {
 const [error, setError] = useState(false)
@@ -27,9 +28,10 @@ const dispatch = useDispatch();
 
   return (
     <div className="App">
-   <Header />
-<User/>
-<MainBtn fetchRandomUser={fetchRandomUser}/>
+    <Header />
+    <User/>
+    <MainBtn fetchRandomUser={fetchRandomUser}/>
+    <MapComp />
     {error && <DialogComp msg={'Error fetching user'} text={'Try to update the url or try again'}/>}
     </div>
   );

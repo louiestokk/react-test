@@ -5,12 +5,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { useSelector } from 'react-redux';
 import { getUserData } from '../redux/user/userSlice';
+
 const Header = () => {
     const [auth, setAuth] = useState(true)
     const [anchorEl, setAnchorEl] = useState(null)
     const {user} = useSelector(getUserData)
-    console.log(user?.length)
-    console.log(user)
     const handleChange = (event) => {
       setAuth(event.target.checked);
     };
@@ -24,7 +23,7 @@ const Header = () => {
     };
   return (
     <div>
-          <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <FormGroup>
         <FormControlLabel
           control={
@@ -49,7 +48,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+         {user?.length>0? `${user[0].name.title}.${user[0].name.first} ${user[0].name.last}`:'Members'} 
           </Typography>
           {auth && (
             <div>
