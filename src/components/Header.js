@@ -61,7 +61,7 @@ const Header = () => {
                 onClick={handleMenu}
                 color="inherit"
               >
-              {user?.length>0 ? <img style={{borderRadius:'50px',height:'35px',width:'35px'}} src={user?.[0].picture.thumbnail}/>:<AccountCircle />}
+              {user?.length>0 ? <img alt='the user' style={{borderRadius:'50px',height:'35px',width:'35px'}} src={user?.[0].picture.thumbnail}/>:<AccountCircle />}
               </IconButton>
               <Menu
                 id="menu-appbar"
