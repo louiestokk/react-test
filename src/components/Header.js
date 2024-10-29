@@ -3,11 +3,14 @@ import { AppBar,Box,Toolbar,Typography,IconButton,Switch,
 FormControlLabel,FormGroup,MenuItem,Menu } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-
+import { useSelector } from 'react-redux';
+import { getUserData } from '../redux/user/userSlice';
 const Header = () => {
     const [auth, setAuth] = useState(true)
     const [anchorEl, setAnchorEl] = useState(null)
-  
+    const {user} = useSelector(getUserData)
+    console.log(user?.length)
+    console.log(user)
     const handleChange = (event) => {
       setAuth(event.target.checked);
     };
@@ -58,7 +61,7 @@ const Header = () => {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+              {user?.length>0 ? <img style={{borderRadius:'50px',height:'35px',width:'35px'}} src={user?.[0].picture.thumbnail}/>:<AccountCircle />}
               </IconButton>
               <Menu
                 id="menu-appbar"
