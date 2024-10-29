@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { useSelector } from 'react-redux';
 import { getUserData } from '../redux/user/userSlice';
-import Hotels from './Hotels';
 import {
     GoogleMap,
     Marker,
@@ -55,7 +54,6 @@ const mapOptions = {
         </GoogleMap>}
         </LoadScript>
      </section>
-     <Hotels />
     </div>
   )
 }

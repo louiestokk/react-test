@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { getUserData } from '../redux/user/userSlice';
 import Spinner from './Spinner';
 import { getLoadingState } from '../redux/loading/loadingSlice';
-
+import MapComp from './MapComp';
 const User = () => {
   const {user} = useSelector(getUserData)
   const {loading} = useSelector(getLoadingState)
@@ -23,6 +23,10 @@ const User = () => {
             <Typography>Nat: {el.nat}</Typography>
             </Box>
         ))}
+        <div>
+        {user?.length>0 &&  <MapComp />}
+        
+        </div>
     </div>
   )
 }
