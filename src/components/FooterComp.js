@@ -11,7 +11,7 @@ const FooterComp = () => {
     <footer id='footer'>
     <div>
     <p> &copy; All Rights Reserved </p>
-    <p>{date}/{month} - {year}</p>
+    <p>{date}/{month+1} - {year}</p>
     <h4>Louie Stokk</h4>
     </div>
     <div>
